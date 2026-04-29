@@ -6,69 +6,104 @@
     <title>Jing-Yuan Wang | Personal Webpage</title>
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            background: #f4f6fb;
             color: #222;
         }
 
         header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 35px 20px;
+            background: linear-gradient(135deg, #35424a, #4c6672);
+            color: white;
             text-align: center;
+            padding: 45px 20px 35px 20px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.3em;
+            font-size: 2.5em;
         }
 
         header p {
-            margin: 8px 0 0;
+            margin: 10px 0 0 0;
             font-size: 1.1em;
         }
 
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 12px 10px;
+            text-align: center;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            margin: 6px 5px;
+            padding: 10px 16px;
+            background: #35424a;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.95em;
+            transition: 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: #1f2a30;
+        }
+
         .container {
-            max-width: 950px;
+            max-width: 1000px;
             margin: auto;
-            padding: 25px;
+            padding: 25px 18px 40px 18px;
         }
 
         .profile-photo {
             display: block;
-            margin: 25px auto;
+            margin: 25px auto 10px auto;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
-            width: 240px;
-            height: 240px;
             object-fit: cover;
-            box-shadow: 0 0 12px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 0 14px rgba(0, 0, 0, 0.18);
+            border: 4px solid white;
         }
 
         section {
-            margin: 24px 0;
-            padding: 22px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+            background: white;
+            margin: 22px 0;
+            padding: 24px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
         }
 
         h2 {
             margin-top: 0;
             color: #35424a;
-            border-bottom: 2px solid #e6e6e6;
+            border-bottom: 2px solid #e7e7e7;
             padding-bottom: 8px;
         }
 
-        ul {
+        h3 {
+            color: #35424a;
+            margin-bottom: 8px;
+        }
+
+        ul, ol {
             padding-left: 22px;
         }
 
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .date {
@@ -77,7 +112,7 @@
         }
 
         .contact a {
-            color: #1a73e8;
+            color: #0056b3;
             text-decoration: none;
         }
 
@@ -85,25 +120,35 @@
             text-decoration: underline;
         }
 
+        .small-note {
+            color: #666;
+            font-size: 0.95em;
+        }
+
         footer {
             text-align: center;
-            padding: 25px;
             color: #666;
+            padding: 25px;
             font-size: 0.9em;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             header h1 {
-                font-size: 1.9em;
-            }
-
-            .container {
-                padding: 15px;
+                font-size: 2em;
             }
 
             .profile-photo {
-                width: 190px;
-                height: 190px;
+                width: 180px;
+                height: 180px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            .nav-btn {
+                font-size: 0.88em;
+                padding: 8px 12px;
             }
         }
     </style>
@@ -115,55 +160,63 @@
         <p>Ph.D. Candidate in Mathematics, University of Macau</p>
     </header>
 
+    <nav>
+        <a class="nav-btn" href="#about">About</a>
+        <a class="nav-btn" href="#education">Education</a>
+        <a class="nav-btn" href="#research">Research</a>
+        <a class="nav-btn" href="#experience">Experience</a>
+        <a class="nav-btn" href="#skills">Skills</a>
+        <a class="nav-btn" href="#publications">Publications</a>
+        <a class="nav-btn" href="#conferences">Conferences</a>
+        <a class="nav-btn" href="#teaching">Teaching</a>
+        <a class="nav-btn" href="#contact">Contact</a>
+    </nav>
+
     <div class="container">
 
         <img src="your-photo.jpg" alt="Jing-Yuan Wang" class="profile-photo">
 
-        <section>
+        <section id="about">
             <h2>About Me</h2>
             <p>
-                I am a Ph.D. candidate in Mathematics at the University of Macau,
-                supervised by Prof. Xiao-Chuan Cai. My research focuses on numerical
-                methods and efficient solvers for large-scale scientific computing,
-                including domain decomposition methods, iterative methods, preconditioning
-                techniques, finite element methods, and computational fluid dynamics.
+                I am a Ph.D. candidate in Mathematics at the University of Macau, supervised by
+                Prof. Xiao-Chuan Cai. My research interests include domain decomposition methods,
+                iterative methods, preconditioning techniques, finite element methods,
+                computational fluid dynamics, and high-performance scientific computing.
             </p>
-
             <p>
-                From April 2026 to July 2026, I am visiting the Mathematical Institute
-                at the University of Oxford, supervised by Prof. Patrick Farrell.
+                I am currently also a visiting student at the Mathematical Institute,
+                University of Oxford, working with Prof. Patrick Farrell.
             </p>
         </section>
 
-        <section>
+        <section id="education">
             <h2>Education</h2>
             <ul>
                 <li>
-                    <strong>Ph.D. Candidate in Mathematics</strong>,
-                    University of Macau, Faculty of Science and Technology,
+                    <strong>University of Macau, Faculty of Science and Technology</strong>,
                     Macau, China<br>
-                    Supervisor: Prof. Xiao-Chuan Cai<br>
+                    Ph.D. Candidate in Mathematics<br>
+                    Supervisor: Xiao-Chuan Cai<br>
                     <span class="date">Aug. 2022 – Present</span>
                 </li>
-
                 <li>
-                    <strong>M.Sc. in Mathematics</strong>,
-                    University of Macau, Faculty of Science and Technology,
+                    <strong>University of Macau, Faculty of Science and Technology</strong>,
                     Macau, China<br>
-                    Supervisor: Prof. Xiao-Chuan Cai<br>
+                    M.Sc. in Mathematics<br>
+                    Supervisor: Xiao-Chuan Cai<br>
                     <span class="date">Aug. 2020 – Jul. 2022</span>
                 </li>
-
                 <li>
-                    <strong>B.Sc. in Information and Computing Science</strong>,
-                    Shandong Normal University, School of Mathematics and Statistics,
+                    <strong>Shandong Normal University, School of Mathematics and Statistics</strong>,
                     Shandong, China<br>
+                    B.Sc. in Information and Computing Science<br>
                     <span class="date">Sep. 2016 – Jun. 2020</span>
                 </li>
             </ul>
         </section>
 
-        <section>
+        <section id="research">
             <h2>Research Interests</h2>
             <p>
                 Domain decomposition methods, iterative methods, implicit Runge–Kutta methods,
@@ -172,118 +225,164 @@
             </p>
         </section>
 
-        <section>
+        <section id="experience">
             <h2>Research Experience</h2>
             <ul>
                 <li>
-                    <strong>Visiting Student</strong>,
-                    Mathematical Institute, University of Oxford, United Kingdom<br>
-                    Supervisor: Prof. Patrick Farrell<br>
+                    <strong>University of Oxford, Mathematical Institute</strong>,
+                    Oxford, United Kingdom<br>
+                    Visiting Student<br>
+                    Supervisor: Patrick Farrell<br>
                     <span class="date">Apr. 2026 – Jul. 2026</span>
                 </li>
             </ul>
         </section>
 
-        <section>
+        <section id="skills">
             <h2>Programming Languages & Software Packages</h2>
             <p>
                 C/C++, MATLAB, Python, C#; PETSc, ParaView, Gmsh, Ansys.
             </p>
         </section>
 
-        <section>
-            <h2>Selected Publications</h2>
-            <ul>
+        <section id="publications">
+            <h2>Publications</h2>
+            <ol>
                 <li>
                     J.-Y. Wang and X.-C. Cai,
                     <em>A Runtime-Data-Driven Enhancement Preconditioner for PCG for a Sequence of SPD Linear Systems</em>,
                     submitted, 2026.
                 </li>
-
                 <li>
                     J.-Y. Wang, L. Luo, and X.-C. Cai,
                     <em>A Data-Driven Re-Preconditioned Krylov-Schwarz Method for Large Sparse Linear System of Equations</em>,
                     submitted, 2025.
                 </li>
-
                 <li>
                     J.-Y. Wang, S. Li, and X.-C. Cai,
                     <em>Highly Parallel Schwarz Preconditioning for Space-Time Implicit Runge-Kutta Method Applied to Parabolic Problems</em>,
                     submitted, 2024.
                 </li>
-
                 <li>
                     S. Li, J.-Y. Wang, and X.-C. Cai,
                     <em>Block Implicit Methods with L-Stability for Parabolic Problems</em>,
-                    BIT Numerical Mathematics, 2025, 65(1), p. 12.
+                    BIT Numer. Math. 2025, 65(1), p. 12.
                 </li>
-
                 <li>
                     S. Li, J.-Y. Wang, and X.-C. Cai,
                     <em>A-Stable High Order Block Implicit Methods for Parabolic Equations</em>,
-                    SIAM Journal on Numerical Analysis, 2023, 61(4), pp. 1858–1884.
+                    SIAM J. Numer. Anal. 2023, 61(4), pp. 1858–1884.
                 </li>
-
                 <li>
-                    J.-Y. Wang, Y. Gong, J. Zhou, F. Qi, Y. Liu, Z. Cheng,
-                    R. Chen, X. Wang, L. Luo, and X.-C. Cai,
+                    J.-Y. Wang, Y. Gong, Y. Shan, F. Qi, Y. Liu, Z. Cheng, R. Chen, X. Wang,
+                    L. Luo, X.-C. Cai,
+                    <em>Offline Modeling and Mixed Reality Based Remote Diagnosis System for Patient-Specific Cardiovascular Diseases</em>,
+                    2025 IEEE MetaCom, pp. 189–196.
+                </li>
+                <li>
+                    F. Qi, Y. Liu, Y. Gong, J.-Y. Wang, R. Chen, P. Hu, L. Luo, X.-C. Cai,
+                    <em>Towards a Digital Twin of the Human Kidney for Diagnosis of Renal Diseases</em>,
+                    2025 IEEE MetaCom, pp. 173–180.
+                </li>
+                <li>
+                    J.-Y. Wang, Y. Gong, J. Zhou, F. Qi, Y. Liu, Z. Cheng, R. Chen, X. Wang,
+                    L. Luo, X.-C. Cai,
                     <em>A Collaborative Mixed Reality Platform for the Planning of Vascular Surgery</em>,
                     2024 IEEE MetaCom, pp. 9–16.
                 </li>
-            </ul>
+                <li>
+                    F. Qi, Y. Liu, Y. Gong, J.-Y. Wang, J. Zhou, R. Chen, R.-S. Huang, X. Wang,
+                    L. Luo, X.-C. Cai,
+                    <em>Mixed Reality Visualization and Interactive Hemodynamic Computation of the Human Brain</em>,
+                    2024 IEEE MetaCom, pp. 17–24.
+                </li>
+                <li>
+                    Y. Gong, F. Qi, J.-Y. Wang, Y. Liu, T. Ma, Z. Cheng, Y. Jiang, R. Chen,
+                    X. Wang, L. Luo, X.-C. Cai,
+                    <em>An Interactive Platform for a High Performance Digital Twin of a Human Heart</em>,
+                    2023 IEEE MetaCom, pp. 192–200.
+                </li>
+            </ol>
         </section>
 
-        <section>
+        <section id="conferences">
             <h2>Conference Presentations</h2>
-            <ul>
+            <ol>
                 <li>
-                    <strong>PETSc Annual User Meeting and Firedrake ’26</strong>,
-                    Oxford, UK, Jun. 2026<br>
-                    Poster:
-                    <em>A Data-Enhanced Preconditioner for High-Order Finite Element Discretization of the Incompressible Navier-Stokes Equations</em>.
+                    <strong>PETSc Annual User Meeting and Firedrake ’26</strong>
+                    (Jun. 2026, Oxford, UK)<br>
+                    Poster: <em>A Data-Enhanced Preconditioner for High-Order Finite Element Discretization of the Incompressible Navier-Stokes Equations</em>
                 </li>
-
                 <li>
-                    <strong>International Workshop on Numerical and Learning Methods for PDEs</strong>,
-                    Sanya, China, Feb. 2026<br>
-                    Poster:
-                    <em>Learning-Enhanced Krylov-Schwarz Preconditioners for Linear System of Equations</em>.
+                    <strong>International Workshop on Numerical and Learning Methods for PDEs</strong>
+                    (Feb. 2026, Sanya, China)<br>
+                    Poster: <em>Learning-Enhanced Krylov-Schwarz Preconditioners for Linear System of Equations</em>
                 </li>
-
                 <li>
-                    <strong>18th Copper Mountain Conference on Iterative Methods</strong>,
-                    Frisco, USA, Apr. 2024<br>
-                    Title:
-                    <em>Parallel Space-Time Implicit Methods and Tensor-Structure-Preserving Schwarz Preconditioning for Parabolic Problems</em>.
+                    <strong>Twenty-Third Annual Conference of China Society for Industrial and Applied Mathematics</strong>
+                    (Oct. 2025, Changsha, China)<br>
+                    Title: <em>Offline-modeling and Mixed Reality Based Remote Diagnosis System</em>
                 </li>
-
                 <li>
-                    <strong>10th International Congress on Industrial and Applied Mathematics</strong>,
-                    Tokyo, Japan, Aug. 2023<br>
-                    Title:
-                    <em>A Tensor-Preserving Domain Decomposition Preconditioner for High-Order Implicit Methods</em>.
+                    <strong>3rd Annual IEEE International Conference on Metaverse Computing, Networking, and Applications</strong>
+                    (Aug. 2025, Seoul, Korea)<br>
+                    Title: <em>Offline-modeling and Mixed Reality Based Remote Diagnosis System for Patient-Specific Cardiovascular Diseases</em>
                 </li>
-            </ul>
+                <li>
+                    <strong>2nd Annual IEEE International Conference on Metaverse Computing, Networking, and Applications</strong>
+                    (Aug. 2024, Hong Kong)<br>
+                    Title: <em>A Collaborative Mixed Reality Platform for the Planning of Vascular Surgery</em>
+                </li>
+                <li>
+                    <strong>Workshop on Numerical and Machine Learning Methods for Partial Differential Equations</strong>
+                    (May 2024, Kunming, China)<br>
+                    Poster: <em>Space-Time Implicit Methods and Applications / Display and Introduction of Computational Virtual Reality</em>
+                </li>
+                <li>
+                    <strong>18th Copper Mountain Conference on Iterative Methods</strong>
+                    (Apr. 2024, Frisco, USA)<br>
+                    Title: <em>Parallel Space-Time Implicit Methods and Tensor-Structure-Preserving Schwarz Preconditioning for Parabolic Problems</em>
+                </li>
+                <li>
+                    <strong>10th International Congress on Industrial and Applied Mathematics</strong>
+                    (Aug. 2023, Tokyo, Japan)<br>
+                    Title: <em>A Tensor-Preserving Domain Decomposition Preconditioner for High-Order Implicit Methods</em>
+                </li>
+                <li>
+                    <strong>Solver 2023</strong>
+                    (Aug. 2023, Xining, China)<br>
+                    Title: <em>A Fully Implicit Runge-Kutta Method with Schwarz Preconditioning</em>
+                </li>
+                <li>
+                    <strong>The 13th Annual Conference on Computational Mathematics</strong>
+                    (Jul. 2023, Nanjing, China)<br>
+                    Title: <em>A Fully Implicit Runge-Kutta Method with Schwarz Preconditioning for Stokes Flows in 3D Arteries and the Space-Time Algorithm</em>
+                </li>
+            </ol>
         </section>
 
-        <section>
+        <section id="teaching">
             <h2>Teaching Experience</h2>
             <ul>
-                <li>Multivariable Calculus, Teaching Assistant, Fall 2022/2023/2024/2025</li>
+                <li>Multivariable Calculus, Teaching Assistant, Fall 2022 / 2023 / 2024 / 2025</li>
                 <li>Calculus I, Teaching Assistant, Spring 2023</li>
-                <li>Engineering Mathematics, Teaching Assistant, Spring 2024/2025</li>
+                <li>Engineering Mathematics, Teaching Assistant, Spring 2024 / 2025</li>
             </ul>
         </section>
 
-        <section class="contact">
+        <section id="contact" class="contact">
             <h2>Contact</h2>
             <p>
-                Department of Mathematics, Faculty of Science and Technology,
+                Department of Mathematics,<br>
+                Faculty of Science and Technology,<br>
                 University of Macau, Macau, China
             </p>
             <p>
                 Email:
                 <a href="mailto:yc27479@um.edu.mo">yc27479@um.edu.mo</a>
+            </p>
+            <p class="small-note">
+                If needed, links to Google Scholar, ORCID, GitHub, or downloadable CV can be added here later.
             </p>
         </section>
 
